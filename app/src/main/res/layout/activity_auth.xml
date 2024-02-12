@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#14141A"
-    tools:context=".MainActivity">
+    tools:context=".AuthActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,10 +16,10 @@
         android:layout_marginTop="210dp"
         android:textSize="25sp"
         android:textColor="#919191"
-        android:text="Создайте аккаунт" />
+        android:text="Войдите в аккаунт" />
 
     <EditText
-        android:id="@+id/userLogin"
+        android:id="@+id/userLoginAuth"
         android:layout_width="220dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
@@ -31,19 +31,7 @@
         android:hint="Введите логин" />
 
     <EditText
-        android:id="@+id/userEmail"
-        android:layout_width="220dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:textColor="#919191"
-        android:textColorHint="#5e5d5d"
-        android:layout_marginTop="20sp"
-        android:hint="Введите адрес эл. почты" />
-
-    <EditText
-        android:id="@+id/userPassword"
+        android:id="@+id/userPasswordAuth"
         android:layout_width="220dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
@@ -55,7 +43,7 @@
         android:hint="Введите пароль" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonAuth"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -63,16 +51,16 @@
         android:layout_marginTop="30sp"
         android:backgroundTint="#b58121"
         android:textColor="#14141A"
-        android:text="Регистрация" />
+        android:text="Войти" />
 
     <TextView
-        android:id="@+id/linkToAuth"
+        android:id="@+id/linkToReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
         android:layout_gravity="center"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="120dp"
         android:textSize="17sp"
         android:textColor="#919191"
-        android:text="Войти" />
+        android:text="Зарегистрироваться" />
 </LinearLayout>

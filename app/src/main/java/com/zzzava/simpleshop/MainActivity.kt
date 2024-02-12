@@ -1,9 +1,11 @@
 package com.zzzava.simpleshop
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +18,15 @@ class MainActivity : AppCompatActivity() {
         val userPassword: EditText = findViewById(R.id.userPassword)
 
         val button: Button = findViewById(R.id.button)
+
+        val linkToAuth: TextView = findViewById(R.id.linkToAuth)
+
+        linkToAuth.setOnClickListener {
+            val intent = Intent(this, AuthActivity::class.java)
+
+            startActivity(intent)
+        }
+
 
         button.setOnClickListener{
             val login = userLogin.text.toString().trim()

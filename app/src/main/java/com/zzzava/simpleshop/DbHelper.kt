@@ -1,5 +1,6 @@
 package com.zzzava.simpleshop;
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -38,5 +39,19 @@ class DbHelper(
                 db.insert("user", null, values)
 
                 db.close()
+        }
+
+        @SuppressLint("Recycle")
+        fun getUser(login: String, password: String): Boolean {
+                val db = this.readableDatabase
+
+                val result = db.rawQuery(
+                        "SELECT * FROM user " +
+                                "WHERE login = '$login' " +
+                                "AND password = '$password';",
+                        null
+                )
+
+                return result.moveToFirst()
         }
 }
