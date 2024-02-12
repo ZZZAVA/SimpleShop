@@ -2,10 +2,31 @@ package com.zzzava.simpleshop
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val userLogin: EditText = findViewById(R.id.userLogin)
+        val userEmail: EditText = findViewById(R.id.userEmail)
+        val userPassword: EditText = findViewById(R.id.userPassword)
+
+        val button: Button = findViewById(R.id.button)
+
+        button.setOnClickListener{
+            val login = userLogin.text.toString().trim()
+            val email = userEmail.text.toString().trim()
+            val password = userPassword.text.toString().trim()
+
+            if (login == "" || email == "" || password == "")
+                Toast.makeText(this, "Не все поля заполнены", Toast.LENGTH_LONG).show()
+            else {
+                val user = User(login, email, password)
+            }
+        }
     }
 }
